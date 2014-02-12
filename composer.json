@@ -20,5 +20,6 @@
     },
     "autoload": {
         "psr-0": {"Neos": "src/"}
-    }
+    },
+    "minimum-stability": "dev"
 }
