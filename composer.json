@@ -13,7 +13,7 @@
         }
     ],
     "archive": {
-        "exclude": ["*.json", "*.git", "*.md", ".gitignore", ".git"]
+        "exclude": ["*.json", "*.git", "*.md", ".gitignore", "/.git"]
     },
     "require": {
         "php": ">=5.4.0"
