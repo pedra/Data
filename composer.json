@@ -12,6 +12,9 @@
             "homepage": "http://billrocha.tk"
         }
     ],
+    "archive": {
+        "exclude": ["/*.json", "/*.git", "/*.md", ".gitignore"]
+    },
     "require": {
         "php": ">=5.4.0"
     },
