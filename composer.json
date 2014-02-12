@@ -1,0 +1,24 @@
+{
+    "name": "neos/data",
+    "description": "Data componentes (configuration, databases, etc)",
+    "keywords": ["data", "config", "database"],
+    "homepage": "http://github.com/pedra/Data",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bill Rocha",
+            "email": "prbr@ymail.com",
+            "homepage": "http://billrocha.tk"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "suggest": {
+        "neos/start": "Basic starter for PHP web projects"
+    },
+    "autoload": {
+        "psr-0": {"Neos": "src/"}
+    }
+}
