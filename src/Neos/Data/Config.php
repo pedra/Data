@@ -60,13 +60,12 @@ class Config {
     }
     
      /**
-     * Cria um arquivo ".ini"
+     * Create ".ini" file
      *
-     * @param Array $ini        Array contendo os dados a serem convertidos
-     * @param String $file  Caminho e nome do arquivo ".ini"
+     * @param Array $file   PAth/name for ini file | null -> return contents and not save file
+     * @param String $type  indicate the type 'user' or 'system' configs
      *
-     * @return Bool|String  Se $file for indicado retorna o status da criação/grvação do arquivo
-     *    Se $file não for indicado retorna uma string com os dados convertidos
+     * @return Bool|String  If $file is specified, saves the file ".ini". Otherwise, returns the contents without saving the file.
      */
     
     static function toIniFile($file = null, $type = 'user'){
