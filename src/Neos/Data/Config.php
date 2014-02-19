@@ -38,6 +38,17 @@ class Config {
     static function get($index){
         return isset(static::$user[$index]) ? static::$user[$index] : null;
     }
+    
+    //Insert/add new parameter
+    static function add($index, $val){
+        if(is_array($val)){
+            foreach ($val as $k=>$v){
+                static::$user[$index][$k]=$v;
+            }
+        } else {
+            static::$user[$index][]=$val;
+        }
+    }
 
     //StaticCall
     static function __callStatic($name,$args){
