@@ -23,6 +23,10 @@ class Conn {
     private $sql = '';
     //node for Result class
     private $result = null;
+    
+    //mode -> null or debug
+    private $mode = null;
+    private $debug = '';
 
     function __construct($alias = null){
         $dt = o::db();
@@ -49,20 +53,33 @@ class Conn {
         return $this->conn;
     }
 
-    //Running simple SQL QUERY
-    function xquery($sql = '',$parms = array()){
-        if($sql == '') return false;
-        $this->sql = $sql;
-        $all = $this->db()->query($sql);
-        return $all->fetchAll();
-    }
-
     function query($sql,$parms = array()){
         $this->sql = $sql;
         $sth = $this->db()->prepare($sql);
         $sth->execute($parms);
+        
+        //Some DEBUG MODE
+        if($this->mode == 'debug'){
+            ob_start();
+            $sth->debugDumpParams();
+            $this->debug = ob_get_clean();        
+        }
 
         return $this->result = $sth->fetchAll(PDO::FETCH_CLASS,"Neos\Data\Result");
+    }
+    
+    /**
+     * Get Debug
+     */
+    function getDebug(){
+        return $this->debug;
+    }
+    
+    /**
+     * Set Mode
+     */
+    function setMode($mode){
+        $this->mode = $mode;
     }
 
     /**
