@@ -25,6 +25,8 @@ Now, type in terminal:
 
 **Optional condition to make things easier!**
 
+*Type it in your index.php or bootstrap file:*
+
     class_alias('Neos\Data\Config', 'o');
     class_alias('Neos\Data\Conn', 'DB');
     
@@ -36,13 +38,24 @@ Now, type in terminal:
 **Configurations**
     
     //loading config file
-    o::load('path/to/config/ini/type/file.ini');
+    o::load('path/to/config.ini');
+
+*get and set config itens*
+
+    //simple get node
+    print_r(o::item());
     
-    //usage
-    print_r( o::item() ); //item in config file.
+    //get item
+    print_r(o::get('item'));
     
-    //saving
-    o::save(); //or o::save('path/to/copy/config/ini/type/file.ini');
+    //set new value
+    o::set('item', [mixed] value);
+    
+*saving the configuration file*    
+
+    o::save(); 
+    //or 
+    o::save('path/to/copy/config.ini');
 
 **Data Base**
 
