@@ -79,7 +79,7 @@ class Config {
      * @return Bool|String  If $file is specified, saves the file ".ini". Otherwise, returns the contents without saving the file.
      */
     
-    static function toIniFile($file = null, $type = 'user'){
+    static function save($file = null, $type = 'user'){
         if(!is_array(static::$$type)) return false;
 
         $o = '';
