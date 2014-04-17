@@ -133,7 +133,7 @@ class Conn {
         
     }
 
-    //Creating DataBaseResult
+    //Creating DataBaseResult - FOR EXAMPLE ONLY !!!!
     function createDb(){
 
         $pdo = $this->db();
